@@ -11,5 +11,26 @@
   "bugs": {
     "url": "https://github.com/KC3Kai/KC3KaiNi/issues"
   },
-  "homepage": "https://kc3kai.github.io"
+  "homepage": "https://kc3kai.github.io",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.16.0",
+    "browserify": "^13.1.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-copy": "^1.0.0",
+    "gulp-react-templates": "^0.2.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.11",
+    "reactify": "^1.1.1",
+    "through2": "^2.0.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
 }
