@@ -1,35 +1,36 @@
 # KC3改二
-_Your favorite KanColle extension evolved once again_
+_A platform for your browser-gaming needs_
 
-KC3改二 is a viewer for [Kantai Collection](http://www.dmm.com/netgame/social/-/gadgets/=/app_id=854854/) containing useful tools to help you play the game
+KC3改二 is a browser-platform that aims to provide the best experience in playing your favorite browser games. Yes, you read that right, **games**! It features a plugin system that allows viewers for any game, not just Kantai Collection!
 
-## Download and Installation
-There's no installation! Just grab the executable file and run it!
+## Download
+There's no installation! Just grab the executable file and run it! ... hm? Where's the Chrome extension installer you ask? ... Sorry ... Kai Ni is a desktop application.
 
-* ### [Download here](https://github.com/KC3Kai/KC3KaiNi/releases)
-
+* [Windows 32-bit](https://github.com/KC3Kai/KC3KaiNi/releases)
+* [Windows 64-bit](https://github.com/KC3Kai/KC3KaiNi/releases)
+* [Linux](https://github.com/KC3Kai/KC3KaiNi/releases)
+* [MacOS](https://github.com/KC3Kai/KC3KaiNi/releases)
 
 ## Documentation
-We have created an entire website to document how you can use the application. Please read it in case you have questions or concerns.
-
-* ### [View User Manual]()
-
-## Changelog
-We do not have a consolidated log of all changes that we make to the application. Our presentation layer for a list of changes for each version is done through GitHub's Pull Request system.
-
-* ### [View list of Releases on GitHub]()
+Before asking questions, visit these docs, you might find the answer here without disturbing anyone lol! For anything else, go to our discord chat in the _Community_ section below
+* [For players](https://kc3kai.github.io/KC3KaiNi/)
+* [For main app contributors](https://kc3kai.github.io/KC3KaiNi/)
+* [For plugin developers](https://kc3kai.github.io/KC3KaiNi/)
 
 ## Community
+#### Contributors
+* Project Head: [tw:@dragonjetmkii](https://twitter.com/dragonjetmkii) / [fb:@dragonjetmkii](https://www.facebook.com/dragonjetmkii)
+*
+*
+*
+*
+
 #### Chat
-We'd love to hear your thoughts about the app, comments and suggestions, join us in a discord channel
-* [Join KanColle Channel](http://discord.me/kancolle)
-* [KC3改Sub Channel `#kc3-kai`](https://discordapp.com/channels/118339803660943369/205766705463427072)
+We'd love to hear your thoughts about the app, comments and suggestions, join us in a discord channel. Please come even if you just want to talk to read the discussions ;)
+* Step 1: [Join KanColle Discord Channel](http://discord.me/kancolle)
+* Step 2: [Join KC3改 Sub-Channel: `#kc3-kai`](https://discordapp.com/channels/118339803660943369/205766705463427072)
 
 #### Social Media
-* [Like our Facebook page](https://www.facebook.com/kc3kai/)~
+* [Like our Facebook page!](https://www.facebook.com/kc3kai/)
   * See and comment on features being developed before they are released
   * Message the page for any questions, or request for support
-* [Follow on twitter](https://twitter.com/kc3kai) (inactive)
-
-## Credits
-See `LICENSE` file, and in-app **About Page**
