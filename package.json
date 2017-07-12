@@ -1,7 +1,7 @@
 {
   "name": "kc3kaini",
   "version": "0.0.1",
-  "description": "Your favorite KanColle extension evolved once again",
+  "description": "Kantai Collection analytic and helper tool in a Chrome Extension",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KC3Kai/KC3KaiNi.git"
