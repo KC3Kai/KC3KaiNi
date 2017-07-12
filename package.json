@@ -5,7 +5,8 @@
   "description": "Your favorite KanColle extension evolved once again",
   "main": "./boot.js",
   "directories": {
-    "doc": "docs"
+    "doc": "docs",
+    "test": "tests"
   },
   "scripts": {
 
