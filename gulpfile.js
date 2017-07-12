@@ -54,14 +54,13 @@ gulp.task('bootMain', function(){
 */
 
 gulp.task('browser-styles', function(){
-  return gulp.src('src/browser/assets/scss/**/*.scss', {base: "./src"})
+  return gulp.src('src/browser/assets/scss/**/*.scss')
     .pipe(sass())
     .pipe(gulp.dest('build/tmp/browser/assets/css'))
 })
 
 gulp.task('browser-scripts', function(){
   return gulp.src([
-      'src/browser/controllers/**/*.js',
       'src/browser/lib/**/*.js',
     ], {base: "./src"})
     .pipe(babel({ presets: ['es2015'] }))
@@ -70,9 +69,10 @@ gulp.task('browser-scripts', function(){
 
 gulp.task('browser-views', function(){
   return gulp.src([
-      'src/browser/views/**/*.js',
+      'src/browser/controllers/**/*.js',
+      'src/browser/views/**/*',
     ], {base: "./src"})
-    .pipe(babel({ presets: ['es2015'] }))
+    .pipe(babel({ presets: ['es2015', 'react'] }))
     .pipe(gulp.dest('build/tmp'))
 })
 

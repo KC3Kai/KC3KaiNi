@@ -11,7 +11,9 @@ app.on('ready', () => {
     width: 900,
     height: 800,
     useContentSize: true,
-    autoHideMenuBar: true
+    autoHideMenuBar: true,
+    // transparent: true,
+    frame: false
   })
   mainWindow.setMenu(null)
   mainWindow.loadURL(url.format({

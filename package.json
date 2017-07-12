@@ -21,9 +21,14 @@
     "url": "https://github.com/KC3Kai/KC3KaiNi/issues"
   },
   "homepage": "https://github.com/KC3Kai/KC3KaiNi#readme",
-  "dependencies": {},
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "electron": "^1.6.11",
     "electron-builder": "^19.15.5",
     "gulp": "^3.9.1",

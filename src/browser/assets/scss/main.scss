@@ -1,0 +1,36 @@
+body {
+  margin:0;
+  padding:0;
+
+  #frame {
+    background: linear-gradient(
+      #0c0c0c 0%,
+      #232323 100px
+    );
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+  }
+
+  #handle {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:50px;
+    -webkit-app-region: drag;
+    background:#777;
+  }
+
+  #root {
+    position:absolute;
+    top:30px;
+    left:3px;
+    bottom:3px;
+    right:3px;
+    -webkit-app-region: no-drag;
+  }
+
+}
