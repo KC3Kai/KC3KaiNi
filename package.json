@@ -2,7 +2,7 @@
   "name": "KC3KaiNi",
   "productName": "KC3 Kai Ni",
   "version": "0.1.0",
-  "description": "Your favorite KanColle extension evolved once again",
+  "description": "A platform for your browser-gaming needs",
   "main": "./boot.js",
   "directories": {
     "doc": "docs",
