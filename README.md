@@ -3,10 +3,10 @@ _Your favorite KanColle extension evolved once again_
 
 KC3改二 is a viewer for [Kantai Collection](http://www.dmm.com/netgame/social/-/gadgets/=/app_id=854854/) containing useful tools to help you play the game
 
-## Installation
-It's an easy one-click installation, so get it now by visiting it in the WebStore, don't worry, it's FREE forever, FREE everything!
-* ### [View extension page in Chrome WebStore]()
+## Download and Installation
+There's no installation! Just grab the executable file and run it!
 
+* ### [Download here](https://github.com/KC3Kai/KC3KaiNi/releases)
 
 
 ## Documentation
