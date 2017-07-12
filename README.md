@@ -13,9 +13,11 @@ There's no installation! Just grab the executable file and run it! ... hm? Where
 
 ## Documentation
 Before asking questions, visit these docs, you might find the answer here without disturbing anyone lol! For anything else, go to our discord chat in the _Community_ section below
-* [For players](https://kc3kai.github.io/KC3KaiNi/)
-* [For main app contributors](https://kc3kai.github.io/KC3KaiNi/)
-* [For plugin developers](https://kc3kai.github.io/KC3KaiNi/)
+
+* [Website home](https://kc3kai.github.io/KC3KaiNi)
+* [For players](https://kc3kai.github.io/KC3KaiNi/player)
+* [For main app contributors](https://kc3kai.github.io/KC3KaiNi/developer)
+* [For plugin developers](https://kc3kai.github.io/KC3KaiNi/plugin)
 
 ## Community
 #### Contributors
