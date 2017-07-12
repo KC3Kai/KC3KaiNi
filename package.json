@@ -1,0 +1,23 @@
+{
+  "name": "KC3KaiNi",
+  "productName": "KC3 Kai Ni",
+  "version": "0.1.0",
+  "description": "Your favorite KanColle extension evolved once again",
+  "main": "./boot.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KC3Kai/KC3KaiNi.git"
+  },
+  "author": "dragonjet <jetriconew@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KC3Kai/KC3KaiNi/issues"
+  },
+  "homepage": "https://github.com/KC3Kai/KC3KaiNi#readme"
+}
