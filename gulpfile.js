@@ -11,9 +11,7 @@ const flatten = require('gulp-flatten')
 */
 gulp.task('build', gulpSequence(
   'cleanTmp',
-  'staticAssets',
-  ['packageJson', 'bootMain'],
-  ['browser-styles', 'browser-scripts', 'browser-views'],
+  ['package', 'boot', 'static', 'scripts'],
   ['plugins', 'themes']
 ))
 
@@ -31,45 +29,28 @@ gulp.task('cleanTmp', function(){
   return gulp.src('build/tmp').pipe(clean({ force: false }))
 })
 
-gulp.task('staticAssets', function(){
-  return gulp.src([
-      'src/browser/assets/images/**/*',
-      'src/browser/assets/html/**/*',
-      'src/data/**/*',
-    ], {base: "./src"})
-    .pipe(gulp.dest('build/tmp'))
-})
-
-gulp.task('packageJson', function(){
+gulp.task('package', function(){
   return gulp.src('package.json').pipe(gulp.dest('build/tmp'))
 })
 
-gulp.task('bootMain', function(){
+gulp.task('boot', function(){
   gulp.src('src/boot.js')
     .pipe(babel({ presets: ['es2015'] }))
     .pipe(gulp.dest('build/tmp'))
 })
 
-/**
-* COMPILE SOURCES FOR THE MAIN BROWSER
-*/
-
-gulp.task('browser-styles', function(){
-  return gulp.src('src/browser/assets/scss/**/*.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('build/tmp/browser/assets/css'))
-})
-
-gulp.task('browser-scripts', function(){
+gulp.task('static', function(){
   return gulp.src([
-      'src/browser/lib/**/*.js',
+      'src/browser/assets/images/**/*',
+      'src/browser/assets/html/**/*'
     ], {base: "./src"})
-    .pipe(babel({ presets: ['es2015'] }))
     .pipe(gulp.dest('build/tmp'))
 })
 
-gulp.task('browser-views', function(){
+gulp.task('scripts', function(){
   return gulp.src([
+      'src/browser/renderer.js',
+      'src/browser/library/**/*.js',
       'src/browser/controllers/**/*.js',
       'src/browser/views/**/*',
     ], {base: "./src"})
@@ -77,13 +58,10 @@ gulp.task('browser-views', function(){
     .pipe(gulp.dest('build/tmp'))
 })
 
-
-/**
-* COMPILE SOURCES FOR PLUGINS AND THEMES
-*/
-
 gulp.task('plugins', function(done){
-  done()
+  return gulp.src('src/plugins/*/dist/*.js')
+    .pipe(flatten())
+    .pipe(gulp.dest('build/tmp/plugins/'));
 })
 
 gulp.task('themes', function(done){
