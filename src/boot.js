@@ -12,12 +12,11 @@ app.on('ready', () => {
     height: 800,
     useContentSize: true,
     autoHideMenuBar: true,
-    // transparent: true,
     frame: false
   })
   mainWindow.setMenu(null)
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'browser/html/main.html'),
+    pathname: path.join(__dirname, 'browser/assets/html/main.html'),
     protocol: 'file:',
     slashes: true
   }))

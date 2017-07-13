@@ -4,6 +4,7 @@ const babel = require('gulp-babel')
 const clean = require('gulp-clean')
 const gulpSequence = require('gulp-sequence')
 const watch = require('gulp-watch')
+const flatten = require('gulp-flatten')
 
 /**
 * SEQUENCES / TASK ENTRY POINTS
@@ -33,7 +34,7 @@ gulp.task('cleanTmp', function(){
 gulp.task('staticAssets', function(){
   return gulp.src([
       'src/browser/assets/images/**/*',
-      'src/browser/html/**/*',
+      'src/browser/assets/html/**/*',
       'src/data/**/*',
     ], {base: "./src"})
     .pipe(gulp.dest('build/tmp'))
@@ -86,7 +87,9 @@ gulp.task('plugins', function(done){
 })
 
 gulp.task('themes', function(done){
-  done()
+  return gulp.src('src/themes/*/dist/*.js')
+    .pipe(flatten())
+    .pipe(gulp.dest('build/tmp/themes/'));
 })
 
 
