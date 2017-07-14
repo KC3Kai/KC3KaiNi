@@ -35,6 +35,7 @@ gulp.task('staticAssets', function(){
       'src/browser/assets/images/**/*',
       'src/browser/html/**/*',
       'src/data/**/*',
+      'src/vendor/**/*'
     ], {base: "./src"})
     .pipe(gulp.dest('build/tmp'))
 })
