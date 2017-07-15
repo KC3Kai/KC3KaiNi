@@ -11,7 +11,7 @@ const flatten = require('gulp-flatten')
 */
 gulp.task('build', gulpSequence(
   'cleanTmp',
-  ['package', 'boot', 'static', 'scripts'],
+  ['package', 'boot', 'static', 'styles', 'scripts'],
   ['plugins', 'themes']
 ))
 
@@ -45,6 +45,14 @@ gulp.task('static', function(){
       'src/browser/assets/html/**/*'
     ], {base: "./src"})
     .pipe(gulp.dest('build/tmp'))
+})
+
+gulp.task('styles', function(){
+  return gulp.src([
+      'src/browser/assets/scss/**/*'
+    ], {base: "./src/browser/assets/scss"})
+    .pipe(sass())
+    .pipe(gulp.dest('build/tmp/browser/assets/css'))
 })
 
 gulp.task('scripts', function(){

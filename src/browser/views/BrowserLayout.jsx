@@ -1,12 +1,17 @@
-import React from 'react';
-
-import Tabs from './components/Tabs'
-import PlaySpace from './components/PlaySpace'
-import StatusBar from './components/StatusBar'
+import React from 'react'
+import Frame from './window/Frame'
+import Handle from './window/Handle'
+import TabList from './window/TabList'
+import PlaySpaceList from './playspace/PlaySpaceList'
 
 class BrowserLayout extends React.Component {
   render() {
-    return <div></div>;
+    return <div>
+      <Frame/>
+      <Handle/>
+      <TabList/>
+      <PlaySpaceList/>
+    </div>;
   }
 }
 
