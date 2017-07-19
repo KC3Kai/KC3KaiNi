@@ -59,6 +59,3 @@ typings/
 
 # Custom
 build/tmp
-*.dll
-*.so
-*.plugin

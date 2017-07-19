@@ -9,7 +9,7 @@ let mainWindow;
 
 switch (process.platform) {
     case 'win32':
-        pluginName = 'pepflashplayer.dll'
+        pluginName = process.arch == "x64" ? 'pepflashplayer-x64.dll' : 'pepflashplayer-ia32.dll'
         break
     case 'darwin':
         pluginName = 'PepperFlashPlayer.plugin'
