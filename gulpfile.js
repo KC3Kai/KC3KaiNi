@@ -4,15 +4,14 @@ const babel = require('gulp-babel')
 const clean = require('gulp-clean')
 const gulpSequence = require('gulp-sequence')
 const watch = require('gulp-watch')
+const flatten = require('gulp-flatten')
 
 /**
 * SEQUENCES / TASK ENTRY POINTS
 */
 gulp.task('build', gulpSequence(
   'cleanTmp',
-  'staticAssets',
-  ['packageJson', 'bootMain'],
-  ['browser-styles', 'browser-scripts', 'browser-views'],
+  ['package', 'boot', 'static', 'styles', 'scripts'],
   ['plugins', 'themes']
 ))
 
@@ -30,63 +29,53 @@ gulp.task('cleanTmp', function(){
   return gulp.src('build/tmp').pipe(clean({ force: false }))
 })
 
-gulp.task('staticAssets', function(){
-  return gulp.src([
-      'src/browser/assets/images/**/*',
-      'src/browser/html/**/*',
-      'src/data/**/*',
-    ], {base: "./src"})
-    .pipe(gulp.dest('build/tmp'))
-})
-
-gulp.task('packageJson', function(){
+gulp.task('package', function(){
   return gulp.src('package.json').pipe(gulp.dest('build/tmp'))
 })
 
-gulp.task('bootMain', function(){
+gulp.task('boot', function(){
   gulp.src('src/boot.js')
     .pipe(babel({ presets: ['es2015'] }))
     .pipe(gulp.dest('build/tmp'))
 })
 
-/**
-* COMPILE SOURCES FOR THE MAIN BROWSER
-*/
+gulp.task('static', function(){
+  return gulp.src([
+      'src/browser/assets/images/**/*',
+      'src/browser/assets/html/**/*'
+    ], {base: "./src"})
+    .pipe(gulp.dest('build/tmp'))
+})
 
-gulp.task('browser-styles', function(){
-  return gulp.src('src/browser/assets/scss/**/*.scss', {base: "./src"})
+gulp.task('styles', function(){
+  return gulp.src([
+      'src/browser/assets/scss/**/*'
+    ], {base: "./src/browser/assets/scss"})
     .pipe(sass())
     .pipe(gulp.dest('build/tmp/browser/assets/css'))
 })
 
-gulp.task('browser-scripts', function(){
+gulp.task('scripts', function(){
   return gulp.src([
+      'src/browser/renderer.js',
+      'src/browser/library/**/*.js',
       'src/browser/controllers/**/*.js',
-      'src/browser/lib/**/*.js',
+      'src/browser/views/**/*',
     ], {base: "./src"})
-    .pipe(babel({ presets: ['es2015'] }))
+    .pipe(babel({ presets: ['es2015', 'react'] }))
     .pipe(gulp.dest('build/tmp'))
 })
-
-gulp.task('browser-views', function(){
-  return gulp.src([
-      'src/browser/views/**/*.js',
-    ], {base: "./src"})
-    .pipe(babel({ presets: ['es2015'] }))
-    .pipe(gulp.dest('build/tmp'))
-})
-
-
-/**
-* COMPILE SOURCES FOR PLUGINS AND THEMES
-*/
 
 gulp.task('plugins', function(done){
-  done()
+  return gulp.src('src/plugins/*/dist/*.js')
+    .pipe(flatten())
+    .pipe(gulp.dest('build/tmp/plugins/'));
 })
 
 gulp.task('themes', function(done){
-  done()
+  return gulp.src('src/themes/*/dist/*.js')
+    .pipe(flatten())
+    .pipe(gulp.dest('build/tmp/themes/'));
 })
 
 
