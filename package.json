@@ -24,6 +24,10 @@
     "source-map-support": "^0.5.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "babel-loader": "^8.0.0-beta",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "electron": "^1.8.4",
     "electron-builder": "^20.8.1",
     "electron-webpack": "^2.0.1",
@@ -39,12 +43,16 @@
   },
   "electronWebpack": {
     "title": "KC3 Kai Ni",
-    "whiteListedModules": ["source-map-support"],
+    "whiteListedModules": [
+      "source-map-support"
+    ],
     "main": {
-      "sourceDirectory": "src"
+      "sourceDirectory": "src/main",
+      "webpackConfig": "build/config/webpack.main.js"
     },
     "renderer": {
-      "sourceDirectory": "src/views"
+      "sourceDirectory": "src/views",
+      "webpackConfig": "build/config/webpack.renderer.js"
     }
   }
 }
