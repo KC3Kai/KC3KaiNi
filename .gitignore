@@ -58,4 +58,4 @@ typings/
 .env
 
 # Custom
-build/tmp
+dev
