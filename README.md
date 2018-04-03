@@ -31,16 +31,16 @@ Before asking questions, visit these docs, you might find the answer here withou
 ----
 
 ## Community
-[![GitHub contributors](https://img.shields.io/github/contributors/KC3Kai/KC3KaiNi.svg)]()
+[![Contributors](https://img.shields.io/github/contributors/KC3Kai/KC3KaiNi.svg)](https://github.com/KC3Kai/KC3KaiNi/graphs/contributors)
 [![Discord](https://img.shields.io/discord/334799201428832257.svg)](https://discord.gg/QP6N8QQ)
 [![Facebook](https://img.shields.io/badge/kc3-facebook-3B5998.svg)](https://www.facebook.com/kc3kai)
-[![Twitter](https://img.shields.io/badge/kc3-twitter-00aced.svg)](https://www.facebook.com/kc3kai)
+[![Twitter](https://img.shields.io/badge/kc3-twitter-00aced.svg)](https://www.twitter.com/kc3kai)
 
 We'd love to hear your thoughts about the app, comments, suggestions, questions, and complaints. Join us in our own discord channel. Please come even if you just want to talk or read the existing discussions!
 
 * [Discord Channel](https://discord.gg/QP6N8QQ)
 * [Facebook](https://www.facebook.com/kc3kai)
-* [Twitter](https://www.facebook.com/kc3kai)
+* [Twitter](https://www.twitter.com/kc3kai)
 
 #### Contributors
 * Lead Developer: [tw:@dragonjetmkii](https://twitter.com/dragonjetmkii) / [fb:@dragonjetmkii](https://www.facebook.com/dragonjetmkii)
