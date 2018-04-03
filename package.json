@@ -1,15 +1,13 @@
 {
   "name": "KC3KaiNi",
   "productName": "KC3 Kai Ni",
-  "version": "0.1.0",
-  "description": "A platform for your browser-gaming needs",
+  "version": "0.1.1",
+  "description": "A client platform for your browser games",
   "main": "./boot.js",
-  "directories": {
-    "doc": "docs",
-    "test": "tests"
-  },
   "scripts": {
-    "build": "gulp build && electron ./build/tmp"
+    "start": "gulp build && electron ./build/tmp",
+    "dist-dir": "gulp dist && electron-builder ./build/tmp -c=./build/configs/electron.build.json --win --ia32 --dir",
+    "dist": "gulp dist && electron-builder ./build/tmp -c=./build/configs/electron.build.json --win --ia32"
   },
   "repository": {
     "type": "git",
