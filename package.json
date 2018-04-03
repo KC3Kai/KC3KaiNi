@@ -3,7 +3,12 @@
   "productName": "KC3 Kai Ni",
   "version": "0.1.0",
   "description": "A platform for your browser-gaming needs",
-  "scripts": {},
+  "scripts": {
+    "dev": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "help": "electron-webpack --help",
+    "dist": "npm run compile && electron-builder"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KC3Kai/KC3KaiNi.git"
@@ -14,10 +19,26 @@
     "url": "https://github.com/KC3Kai/KC3KaiNi/issues"
   },
   "homepage": "https://kc3.moe",
-  "dependencies": {},
-  "devDependencies": {},
-  "engines" : {
-    "node" : ">=6.9.4",
-    "npm" : ">=5"
+  "dependencies": {
+    "source-map-support": "^0.5.4"
+  },
+  "devDependencies": {
+    "electron": "^1.8.4",
+    "electron-builder": "^20.8.1",
+    "electron-webpack": "^2.0.1",
+    "webpack": "^4.4.1"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "electronWebpack": {
+    "title": "KC3 Kai Ni",
+    "main": {
+      "sourceDirectory": "src"
+    },
+    "renderer": {
+      "sourceDirectory": "src/views"
+    }
   }
 }
