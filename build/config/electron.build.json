@@ -1,0 +1,17 @@
+{
+  "appId": "com.kc3.kaini",
+  "artifactName": "kc3kaini.${ext}",
+  "directories": {
+    "buildResources": "./build/resources",
+    "output": "./build/dist"
+  },
+  "asarUnpack": [
+
+  ],
+  "win": {
+    "target": ["portable"]
+  },
+  "portable": {
+
+  }
+}
