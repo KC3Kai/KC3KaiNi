@@ -4,14 +4,20 @@
     <br />
     <br />
     Rendering hello variable: {{hello}}
+    <br />
+    <br />
+    <img :src="bestImoutoUrl">
   </div>
 </template>
 
 <script>
+import BestImouto from '@img/bestimouto.png'
+
 export default {
   data: function() {
     return {
-      hello: 'worlds' // initial text
+      hello: 'worlds', // initial text
+      bestImoutoUrl: BestImouto
     }
   },
   watch: {

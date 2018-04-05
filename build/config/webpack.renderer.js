@@ -5,6 +5,7 @@ module.exports = {
     alias: {
       '@vue': path.resolve(__dirname, '../../src/browser/components'),
       '@scss': path.resolve(__dirname, '../../src/browser/scss'),
+      '@img': path.resolve(__dirname, '../../src/browser/img'),
     }
   },
   module: {
