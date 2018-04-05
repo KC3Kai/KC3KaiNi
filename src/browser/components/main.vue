@@ -3,7 +3,12 @@
     hello value change via interaction: <input v-model="hello" placeholder="edit me">
     <br />
     <br />
-    Rendering hello variable: <span class='strong'>{{hello}}</span>
+    Rendering hello variable: <span class='strong'>{{ $t("HELLO", { name: hello }) }}</span>
+    <br />
+    <br />
+    Language:
+    <a href="#" v-on:click="changeLocale('en-US')">EN</a> /
+    <a href="#" v-on:click="changeLocale('tl-PH')">PH</a>
     <br />
     <br />
     <img :src="bestImoutoUrl">
@@ -26,7 +31,9 @@ export default {
     }
   },
   methods: {
-
+    changeLocale: function(localeName) {
+      this.$i18n.locale = localeName
+    }
   }
 }
 </script>
