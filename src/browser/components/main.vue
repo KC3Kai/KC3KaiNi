@@ -1,9 +1,9 @@
 <template>
-  <div class="test">
+  <div>
     hello value change via interaction: <input v-model="hello" placeholder="edit me">
     <br />
     <br />
-    Rendering hello variable: {{hello}}
+    Rendering hello variable: <span class='strong'>{{hello}}</span>
     <br />
     <br />
     <img :src="bestImoutoUrl">
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss">
-.test {
-  color: #0000ff;
+.strong {
+  font-weight:bold;
 }
 </style>
