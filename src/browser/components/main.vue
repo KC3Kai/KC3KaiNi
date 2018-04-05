@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .test {
   color: #0000ff;
 }

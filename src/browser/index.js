@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import MainVue from '@vue/main.vue'
+import '@scss/global.scss'
 
 let main = document.createElement('div')
 main.id = 'main'
