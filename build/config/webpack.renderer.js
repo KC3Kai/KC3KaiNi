@@ -1,6 +1,11 @@
 const path = require('path')
 
 module.exports = {
+  resolve: {
+    alias: {
+      '@vue': path.resolve(__dirname, '../../src/browser/components'),
+    }
+  },
   module: {
     rules: [
       { // Babel JS
