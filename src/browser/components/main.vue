@@ -6,9 +6,9 @@
       </template>
       <template slot="tabs">
         <ul class="kc3-tabs">
-          <li class="kc3-tab">tab1</li>
-          <li class="kc3-tab">tab2</li>
-          <li class="kc3-tab">tab3</li>
+          <li class="kc3-tab" id="tab-1" data-tab-id="1" v-on:click="changeTab">github</li>
+          <li class="kc3-tab" id="tab-2" data-tab-id="2" v-on:click="changeTab">google</li>
+          <li class="kc3-tab" id="tab-3" data-tab-id="3" v-on:click="changeTab">dmm</li>
         </ul>
       </template>
       <template slot="addressbar">
@@ -23,23 +23,14 @@
       </template>
       <template slot="viewport">
         <div class="kc3-viewports">
-          <div class="kc3-viewport">
-            <webview>
-              hello value change via interaction: <input v-model="hello" placeholder="edit me">
-              <br />
-              <br />
-              Rendering hello variable: <span class='strong'>{{ $t("HELLO", { name: hello }) }}</span>
-              <br />
-              <br />
-              Language:
-              <a href="#" v-on:click="changeLocale('en-US')">EN</a> /
-              <a href="#" v-on:click="changeLocale('tl-PH')">PH</a>
-              <br />
-              <br />
-            </webview>
+          <div class="kc3-viewport" id="viewport-1" v-show="shownViewport == 1">
+            <webview src="https://github.com/KC3Kai/KC3KaiNi"></webview>
           </div>
-          <div class="kc3-viewport">
+          <div class="kc3-viewport" id="viewport-2" v-show="shownViewport == 2">
             <webview src="https://www.google.com"></webview>
+          </div>
+          <div class="kc3-viewport" id="viewport-3" v-show="shownViewport == 3">
+            <webview src="https://www.dmm.com"></webview>
           </div>
         </div>
       </template>
@@ -56,17 +47,21 @@ export default {
   data: function() {
     return {
       hello: 'worlds', // initial text
-      bestImoutoUrl: BestImouto
+      bestImoutoUrl: BestImouto,
+      shownViewport: 1
     }
   },
   watch: {
     hello: function(newValue) {
       console.log('hello variable change detected. it is now', newValue);
-    }
+    },
   },
   methods: {
     changeLocale: function(localeName) {
       this.$i18n.locale = localeName
+    },
+    changeTab: function(evt) {
+      this.shownViewport = parseInt(evt.srcElement.getAttribute('data-tab-id'), 10)
     }
   },
   components: {
