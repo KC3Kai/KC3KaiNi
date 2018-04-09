@@ -6,7 +6,8 @@
       </template>
       <template slot="tabs">
         <ul class="kc3-tabs">
-          <li class="kc3-tab" v-for="(tab, tabId) in tabs.list" :id="'tab-'+tabId" :data-tab-id="tabId" v-on:click="changeTab">{{tab.title}}</li>
+          <li :class="['kc3-tab', activeTabClass(tabId)]" v-for="(tab, tabId) in tabs.list" :id="'tab-'+tabId" :data-tab-id="tabId" v-on:click="changeTab">{{tab.title}}</li>
+          <li class="kc3-tab-add" v-on:click="addTab('https://www.google.com')"></li>
         </ul>
       </template>
       <template slot="addressbar">
@@ -21,8 +22,8 @@
       </template>
       <template slot="viewport">
         <div class="kc3-viewports">
-          <div v-for="(tab, tabId) in tabs.list" class="kc3-viewport" :id="'viewport-' + tabId"  v-show="tabs.active == tabId">
-            <webview :src="tab.url" partition="persist:kc3"></webview>
+          <div v-for="(tab, tabId) in tabs.list" class="kc3-viewport" :key="tabId" :id="'viewport-' + tabId"  v-show="tabs.active == tabId">
+            <webview :src="tab.url" partition="persist:kc3" class="kc3-webview" :data-tab-id="tabId" v-on:page-title-updated="titleChange"></webview>
           </div>
         </div>
       </template>
@@ -41,42 +42,53 @@ export default {
       logoUrl: BestImouto,
       tabs: {
         active: 1,
-        list: {
-          '1': {
-            title: 'kc3k2',
-            url: 'https://github.com/KC3Kai/KC3KaiNi'
-          },
-          '2': {
-            title: 'google.com',
-            url: 'https://www.google.com'
-          },
-          '3': {
-            title: 'dmm.com',
-            url: 'https://www.dmm.com'
-          }
-        }
+        idHead: 0,
+        list: { }
       }
     }
   },
   computed: {
     activeUrl: function(){
-      return this.getActiveTab().url
+      return this.getActiveTab() ? this.getActiveTab().url : null
     }
   },
   methods: {
+    addTab: function(url) {
+      this.tabs.idHead += 1
+      let newTabInfo = {
+        id: this.tabs.idHead,
+        title: 'New Tab',
+        url: url
+      }
+      this.$set(this.tabs.list, String(this.tabs.idHead), newTabInfo)
+      this.$nextTick(()=>{ this.changeTabById(this.tabs.idHead) })
+    },
     changeTab: function(evt) {
-      this.tabs.active = parseInt(evt.srcElement.getAttribute('data-tab-id'), 10)
+      this.changeTabById(evt.srcElement.getAttribute('data-tab-id'))
+    },
+    changeTabById: function(tabId) {
+      this.tabs.active = tabId
     },
     goToUrl: function(evt) {
       let activeTab = this.getActiveTab()
       activeTab.url = evt.srcElement.value
     },
+    titleChange: function(evt) {
+      let tabId = parseInt(evt.srcElement.getAttribute('data-tab-id'), 10)
+      this.tabs.list[tabId].title = evt.title
+    },
     getActiveTab: function() {
-      return this.tabs.list[this.tabs.active]
+      return this.tabs.list[this.tabs.active] || null
+    },
+    activeTabClass(tabId) {
+      return this.tabs.active == tabId ? 'active' : ''
     }
   },
   components: {
     ChromiumTheme: ChromiumTheme
+  },
+  mounted: function() {
+    this.addTab('https://www.google.com')
   }
 }
 </script>
