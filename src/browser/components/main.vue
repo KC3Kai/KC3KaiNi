@@ -21,13 +21,9 @@
       </template>
       <template slot="viewport">
         <div class="kc3-viewports">
-          <ul>
-            <li v-for="(tab, tabId) in tabs.list">
-              <div class="kc3-viewport" :id="'viewport-' + tabId"  v-show="tabs.active == tabId" >
-                <webview :src="tab.url"></webview>
-              </div>
-            </li>
-          </ul>
+          <div v-for="(tab, tabId) in tabs.list" class="kc3-viewport" :id="'viewport-' + tabId"  v-show="tabs.active == tabId">
+            <webview :src="tab.url" partition="persist:kc3"></webview>
+          </div>
         </div>
       </template>
     </ChromiumTheme>
@@ -99,26 +95,19 @@ body {
 .kc3-viewports {
   position:relative;
 
-  ul {
+  .kc3-viewport {
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    position:absolute;
 
-    li {
-      list-style:none;
-
-      .kc3-viewport {
-        top:0;
-        bottom:0;
-        left:0;
-        right:0;
-        position:absolute;
-
-        webview {
-          top:0;
-          bottom:0;
-          left:0;
-          right:0;
-          position:absolute;
-        }
-      }
+    webview {
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      position:absolute;
     }
   }
 }
