@@ -14,7 +14,8 @@ function createMainWindow() {
     width: 800,
     height: 480,
     useContentSize: true,
-    frame: true
+    frame: false,
+    thickFrame: false
   })
 
   window.setMenu(null);
