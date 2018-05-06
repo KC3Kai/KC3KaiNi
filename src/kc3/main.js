@@ -48,7 +48,7 @@ class KC3 {
   rendererUrl() {
     return isDevelopment
       ? 'http://localhost:'+process.env.ELECTRON_WEBPACK_WDS_PORT
-      : url.formatUrl({
+      : url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file',
         slashes: true
