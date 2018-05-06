@@ -21,7 +21,10 @@
   },
   "homepage": "https://kc3.moe",
   "dependencies": {
-    "source-map-support": "^0.5.4"
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "source-map-support": "^0.5.4",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.44",

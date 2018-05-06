@@ -1,0 +1,8 @@
+
+/*
+Plugin {
+  enable()
+  disable()
+  uninstall()
+}
+*/
