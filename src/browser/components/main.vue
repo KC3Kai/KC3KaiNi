@@ -23,7 +23,7 @@
       <template slot="viewport">
         <div class="kc3-viewports">
           <div v-for="(tab, tabId) in tabs.list" class="kc3-viewport" :key="tabId" :id="'viewport-' + tabId"  v-show="tabs.active == tabId">
-            <webview :src="tab.url" partition="persist:kc3" class="kc3-webview" :data-tab-id="tabId" v-on:page-title-updated="titleChange"></webview>
+            <!-- <PlayspaceVue :playspaceId=""></PlayspaceVue> -->
           </div>
         </div>
       </template>
@@ -35,6 +35,7 @@
 <script>
 import BestImouto from '@img/bestimouto.png'
 import ChromiumTheme from '@themes/chromium/browser.vue'
+// import PlayspaceVue from '@vue/playspace.vue'
 
 export default {
   data: function() {
@@ -85,10 +86,12 @@ export default {
     }
   },
   components: {
-    ChromiumTheme: ChromiumTheme
+    ChromiumTheme: ChromiumTheme,
+    // Playspace: PlayspaceVue
   },
   mounted: function() {
-    this.addTab('https://www.google.com')
+    this.addTab('http://localhost:3000/widget/sample')
+    this.addTab('http://localhost:3000/script/sample')
   }
 }
 </script>

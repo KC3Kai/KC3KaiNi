@@ -6,6 +6,8 @@ module.exports = {
       '@vue': path.resolve(__dirname, '../../src/browser/components'),
       '@img': path.resolve(__dirname, '../../src/browser/img'),
       '@themes': path.resolve(__dirname, '../../src/themes'),
+      '@KC3': path.resolve(__dirname, '../../src/kc3'),
+      '@schema': path.resolve(__dirname, '../../src/schema'),
     }
   },
   module: {
