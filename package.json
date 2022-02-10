@@ -32,7 +32,7 @@
     "electron-builder": "^20.8.1",
     "electron-webpack": "^2.0.1",
     "electron-webpack-vue": "^2.1.0",
-    "node-sass": "^4.8.3",
+    "node-sass": "^7.0.0",
     "sass-loader": "^6.0.7",
     "vue": "^2.5.16",
     "vue-i18n": "^7.6.0",
